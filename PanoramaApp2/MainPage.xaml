@@ -1,0 +1,260 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="PanoramaApp2.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+
+
+        <toolkit:TransitionService.NavigationInTransition>
+            <toolkit:NavigationInTransition>
+                <toolkit:NavigationInTransition.Backward>
+                    <toolkit:TurnstileFeatherTransition Mode="BackwardIn"/>
+                </toolkit:NavigationInTransition.Backward>
+                <toolkit:NavigationInTransition.Forward>
+                    <toolkit:TurnstileFeatherTransition Mode="ForwardIn"/>
+                </toolkit:NavigationInTransition.Forward>
+            </toolkit:NavigationInTransition>
+        </toolkit:TransitionService.NavigationInTransition>
+        <toolkit:TransitionService.NavigationOutTransition>
+            <toolkit:NavigationOutTransition>
+                <toolkit:NavigationOutTransition.Backward>
+                    <toolkit:TurnstileFeatherTransition Mode="BackwardOut"/>
+                </toolkit:NavigationOutTransition.Backward>
+                <toolkit:NavigationOutTransition.Forward>
+                    <toolkit:TurnstileFeatherTransition Mode="ForwardOut"/>
+                </toolkit:NavigationOutTransition.Forward>
+            </toolkit:NavigationOutTransition>
+        </toolkit:TransitionService.NavigationOutTransition>
+
+
+        <!-- LOCALIZATION NOTE:
+            To localize the displayed strings copy their values to appropriately named
+            keys in the app's neutral language resource file (AppResources.resx) then
+            replace the hard-coded text value between the attributes' quotation marks
+            with the binding clause whose path points to that string name.
+
+            For example:
+
+                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
+
+            This binding points to the template's string resource named "ApplicationTitle".
+
+            Adding supported languages in the Project Properties tab will create a
+            new resx file per language that can carry the translated values of your
+            UI strings. The binding in these examples will cause the value of the
+            attributes to be drawn from the .resx file that matches the
+            CurrentUICulture of the app at run time.
+         -->
+
+        <!--Panorama control-->
+        <phone:Panorama Title="Hediye Pusulası">
+            <phone:Panorama.Background>
+                <ImageBrush ImageSource="/PanoramaApp2;component/Assets/PanoramaBackground.png"/>
+                <!--burası çalışmıyor-->
+            </phone:Panorama.Background>
+
+            <!--Panorama item one-->
+            <phone:PanoramaItem Header="Nedir ?">
+
+
+
+                <TextBlock FontSize="30" Text="   Hediye Pusulası ile hediye seçmek hiç bu kadar kolay olmamıştı. Özel günlerde hediye seçme derdinden sizi kurtaracak ve gelişmiş tahmin yeteneği ile sevdiklerinizin çok beğeneceği hediyeye sadece bir kaç dokunuş ile ulaşacaksınız." TextWrapping="Wrap" Margin="10,0,0,0" />
+
+
+
+
+            </phone:PanoramaItem>
+
+            <!--Panorama item two-->
+            <phone:PanoramaItem Header="Kişisel Bilgiler" Orientation="Horizontal">
+                <!--Double wide Panorama with large image placeholders-->
+                <Grid>
+                    <StackPanel Margin="0,4,16,0" Orientation="Vertical" VerticalAlignment="Top">
+                        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="0,12,0,0">
+                            <toolkit:WrapPanel>
+
+                                <toolkit:HubTile
+                                    Source=".\Assets\cinsiyet.png"
+                                    BorderBrush="AliceBlue" 
+                                    BorderThickness="1" 
+                                    Margin="12,0,0,0"
+                                    Title="Cinsiyet"
+                                    Message="Hediye Almak İstediğiniz Kişinin Cinsiyetini Seçiniz"
+                                    MouseLeave="Image_MouseEnter"
+                                    Background="#8c001a"
+                                    >
+                                </toolkit:HubTile>
+
+                                <toolkit:HubTile
+                                    Source=".\Assets\yas.png"
+                                    BorderBrush="AliceBlue"
+                                    BorderThickness="1"
+                                    Margin="12,0,0,0"
+                                    Title="Yaş"
+                                    Message="Hediye Almak İstediğiniz Kişinin Yaşını Seçiniz"
+                                    MouseLeave="img_yas_MouseEnter"
+                                    Background="#094cb5"
+                                    >
+                                </toolkit:HubTile>
+
+                                <toolkit:HubTile
+                                    Source=".\Assets\kutlama.png"
+                                    BorderBrush="AliceBlue"
+                                    BorderThickness="1"
+                                    Margin="12,0,0,0"
+                                    Title="Kutlama Türü"
+                                    Message="Kutlama Türünü Seçiniz"
+                                    MouseLeave="img_kutlama_MouseEnter"
+                                    Background="#ae193f"
+                                    >
+                                </toolkit:HubTile>
+
+                                <toolkit:HubTile
+                                    Source=".\Assets\hobi.png"
+                                    BorderBrush="AliceBlue"
+                                    BorderThickness="1"
+                                    Margin="12,0,0,0"
+                                    Title="Hobiler"
+                                    Message="Hediye Alacağınız Kişinin Hobilerini Seçiniz"
+                                    MouseLeave="img_hobby_MouseEnter"
+                                    Background="#dc5630"
+                                    >
+                                </toolkit:HubTile>
+
+                                <toolkit:HubTile
+                                    Source=".\Assets\pets.png"
+                                    BorderBrush="AliceBlue"
+                                    BorderThickness="1"
+                                    Margin="12,0,0,0"
+                                    Title="Hayvanlar"
+                                    Message="Hediye Alacağınız Kişinin Sevdiği Evcil Hayvanlar"
+                                    MouseEnter="img_pets_MouseEnter"
+                                    Background="#dc5630"
+                                    >
+                                </toolkit:HubTile>
+
+
+
+                            </toolkit:WrapPanel>
+                        </StackPanel>
+
+                        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="0,12,0,0">
+                            <toolkit:WrapPanel>
+
+                                <toolkit:HubTile
+                                    Source=".\Assets\burc.png"
+                                    BorderBrush="AliceBlue"
+                                    BorderThickness="1"
+                                    Margin="12,0,0,0"
+                                    Title="Burç"
+                                    Message="Hediye Almak İstediğiniz Kişinin Burcunu Seçiniz"
+                                    MouseLeave="img_burc_MouseEnter"
+                                    Background="#2d88ef"
+                                    >
+                                </toolkit:HubTile>
+
+                                <toolkit:HubTile
+                                    Source=".\Assets\color.png"
+                                    BorderBrush="AliceBlue"
+                                    BorderThickness="1"
+                                    Margin="12,0,0,0"
+                                    Title="Renkler"
+                                    Message="Hediye Almak İstediğiniz Kişinin Sevdiği Renkler"
+                                    MouseLeave="img_color_MouseEnter"
+                                    Background="#094cb5"
+                                    >
+                                </toolkit:HubTile>
+
+                                <toolkit:HubTile
+                                    Source=".\Assets\futbol.png"
+                                    BorderBrush="AliceBlue"
+                                    BorderThickness="1"
+                                    Margin="12,0,0,0"
+                                    Title="Takımlar"
+                                    Message="Hediye Almak İstediğiniz Kişinin Tuttuğu Takım"
+                                    MouseLeave="img_futbol_MouseEnter"
+                                    Background="#008e00"
+                                    >
+                                </toolkit:HubTile>
+
+                                <toolkit:HubTile
+                                    Source=".\Assets\muzik.png"
+                                    BorderBrush="AliceBlue"
+                                    BorderThickness="1"
+                                    Margin="12,0,0,0"
+                                    Title="Müzikler"
+                                    Message="Hediye Almak İstediğiniz Kişinin Sevdiği Müzik Türleri"
+                                    MouseLeave="img_music_MouseEnter"
+                                    Background="#8c001a"
+                                    >
+                                </toolkit:HubTile>
+
+                                <toolkit:HubTile
+                                    Source=".\Assets\icon.png"
+                                    BorderBrush="AliceBlue"
+                                    BorderThickness="1"
+                                    Margin="12,0,0,0"
+                                    Title="PusuLA!"
+                                    Message="PusuLAmak İçin Dokunun"
+                                    MouseLeave="img_pusula_MouseEnter"
+                                    Background="#2a7ff4"
+                                    >
+                                </toolkit:HubTile>
+
+
+
+                                <!--<Border BorderBrush="AliceBlue" BorderThickness="1" Margin="12,0,0,0">
+                                    <Image Width="173" Height="173" Source=".\Assets\burc.png" Tag="img_1" Margin="0,0,0,0" x:Name="img_burc" MouseEnter="img_burc_MouseEnter" />
+                                </Border>-->
+
+                                <!--<Border BorderBrush="AliceBlue" BorderThickness="1" Margin="12,0,0,0">
+                                    <Image Width="173" Height="173" Source=".\Assets\color.png" Tag="img_1" Margin="0,0,0,0" x:Name="img_color" MouseEnter="img_color_MouseEnter" />
+                                </Border>-->
+
+                                <!--<Border BorderBrush="AliceBlue" BorderThickness="1" Margin="12,0,0,0">
+                                    <Image Width="173" Height="173" Source=".\Assets\futbol.png" Tag="img_1" Margin="0,0,0,0" x:Name="img_futbol" MouseEnter="img_futbol_MouseEnter" />
+                                </Border>-->
+
+                                <!--<Border BorderBrush="AliceBlue" BorderThickness="1" Margin="12,0,0,0">
+                                    <Image Width="173" Height="173" Source=".\Assets\muzik.png" Tag="img_1" Margin="0,0,0,0" x:Name="img_music" MouseEnter="img_music_MouseEnter" />
+                                </Border>-->
+
+                                <!--<Border BorderBrush="AliceBlue" BorderThickness="1" Margin="12,0,0,0">
+                                    <Image Width="173" Height="173" Source=".\Assets\icon.png" Margin="0,0,0,0" x:Name="img_pusula" MouseEnter="img_pusula_MouseEnter"></Image>
+                                </Border>-->
+                            </toolkit:WrapPanel>
+                        </StackPanel>
+
+                    </StackPanel>
+                </Grid>
+            </phone:PanoramaItem>
+
+            <!--Panorama item three-->
+
+
+        </phone:Panorama>
+
+        <!--Uncomment to see an alignment grid to help ensure your controls are
+            aligned on common boundaries.  The image has a top margin of -32px to
+            account for the System Tray. Set this to 0 (or remove the margin altogether)
+            if the System Tray is hidden.
+
+            Before shipping remove this XAML and the image itself.-->
+        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+
+    </Grid>
+</phone:PhoneApplicationPage>
